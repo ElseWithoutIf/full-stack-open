@@ -1,0 +1,24 @@
+title Creating a new note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server->browser: 302 Found: URL redirect to /exampleapp/notes
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: 200 Ok: Sent notes (HTML)
+browser->server: HTTP GEThttps://studies.cs.helsinki.fi/exampleapp/main.js
+server->browser: 200 Ok: Sent main.js
+browser->server: HTTP GEThttps://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: 200 Ok: Sent main.css
+
+note over browser:
+browser executes main.js
+makes HTTP GEt request 
+for json data
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: Responds with JSON content
+
+note over browser:
+notes are displayed
+once loaded into memory
+end note
